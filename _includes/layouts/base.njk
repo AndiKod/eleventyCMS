@@ -1,23 +1,62 @@
 <!doctype html>
-<html {% if section %} data-current="{{ section }}"{% endif %} lang="en">
+<html {% if section %} data-current="{{ section }}" {% endif %} lang="en">
 
-	{% include "components/head.njk" %}
+  {% include "components/head.njk" %}
 
-	<body>
+  <body>
 
-		<header>
-			<em>
-				<a href="{{ '/' | url }}">{{ metadata.title }}</a>
-			</em>
-			{% include "components/nav.njk" %}
-		</header>
+    {# <header>
+      <em>
+        <a href="{{ '/' | url }}">{{ metadata.title }}</a>
+      </em>
+      {% include "components/nav.njk" %}
+    </header> #}
+    <header>
+      <a class="header-link" href="/">
+        <h1 class="bot-header">B</h1><img class="robot" src='static/img/robot-color.svg'>
+        <h1 class="bot-header">o</h1><img class="robot" src='static/img/robot-color.svg'>
+        <h1 class="bot-header">T</h1>
+      </a>
 
-		<main>
-			{{ layoutContent | safe }}
-		</main>
+      <div class="detail-header-box">
+        <ul id="detail-nav">
+          <a href="/blog/archive" class="animated-link">
+            <li>archive</li>
+          </a>
+          <a href="/resources" class="animated-link">
+            <li>resources</li>
+          </a>
+        </ul>
 
-		{% include "components/footer.njk" %}
+        <span id="detail-sitename">
+          <a href="/" style="text-decoration: none; color: black;">Welcome to BradyOnTech</a>
+        </span>
 
-	</body>
+        <!--Search Bar-->
+        <form id="detail-search-form" action="/search" method="GET">
+          <input type="text" placeholder="Search..." name="q">
+          <span type="submit" id="search-icon-container">
+            <button type="submit" id="submit-button">
+              <ion-icon name="search" size="small" id="search-btn"></ion-icon>
+            </button>
+          </span>
+        </form>
+      </div>
+
+      <div class="mobile-header-box">
+        <span id="detail-sitename">
+          <a href="/" style="text-decoration: none; color: black;">Welcome to BradyOnTech</a>
+        </span>
+      </div>
+
+    </header>
+
+    <main>
+      {{ layoutContent | safe }}
+    </main>
+
+    {% include "components/footer.njk" %}
+    <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
+  </body>
 
 </html>
