@@ -1,0 +1,18 @@
+<div class="sidebar">
+    <div class="desktop-home-sidebar">
+        <img id="profile-pic" src='static/img/profile_pic_crop.png' alt="profile picture">
+        <h3 id="author">Brady Anderson</h3>
+        <h5 class="author-info about-me">
+            <a href="/about">About Me</a>
+        </h5>
+
+        <div id="desktop-home-popular">
+            <h3 class="sidebar-header">Most Popular</h3>
+            {% for post in collections.popular %}
+                <a href="{{ post.url }}" class="sidebar-link">{{ post.data.title }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+    {# {% include "blog/includes/mobile_overlay.html" with most_popular = most_popular recent_posts = recent_posts %} #}
+</div>

@@ -2,13 +2,15 @@
 title: This is my first post
 date: 2015-01-01T00:00:00.000Z
 author: Brady Anderson
-summary: Why contemplating our mortality can be a powerful catalyst for change
+summary: Learning Eleventy one line of code at a time
 tags:
   - tech
   - environment
   - politics
   - sport
+  - popular
 ---
+
 ![](/static/img/002-robotic-1.png "bot")
 
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
