@@ -1,0 +1,17 @@
+<!doctype html>
+<html {% if section %} data-current="{{ section }}" {% endif %} lang="en">
+
+    {% include "components/head.njk" %}
+
+    <body>
+        {% include "components/detail_header.njk" %}
+
+        <main>
+            {{ layoutContent | safe }}
+        </main>
+
+        {% include "components/footer.njk" %}
+        <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
+    </body>
+
+</html>

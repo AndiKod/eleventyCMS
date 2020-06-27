@@ -1,31 +1,54 @@
 ---
-layout: layouts/base.njk
+layout: layouts/detail_base.njk
 section: post
 ---
 
 <article>
-  <h1>{{ title }}</h1>
+  {# <h1>{{ title }}</h1>
   <p>
     <small>
-      <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by <a href="/authors/{{ author | slug }}/">{{ author }}</a>
+      <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time>
+      by
+      <a href="/authors/{{ author | slug }}/">{{ author }}</a>
     </small>
-  </p>
+  </p> #}
+  <div class="detail-container">
+    <div class="detail-content">
+      <h1>{{ title }}</h1>
+      <h4 class="published">Published on:
+        <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time>
+      </h4>
+      {# {% if post.series.slug != "general" %} #}
+      <h4 class="published">Series:
+        {# <a href="/blog/{{ post.series.category.slug }}/{{ post.series.slug }}">{{ post.series }}</a> #}
+      </h4>
+      {# {% endif %} #}
+      <h4 class="published">Author:
+        <a href="#">{{ author }}</a>
+      </h4>
 
-  {{ layoutContent | safe }}
+      <div class="post-content">
+        {{ layoutContent | safe }}
+      </div>
+    </div>
 
-  {% if tags %}
+    {% include "components/detail_sidebar.njk" %}
+
+  </div>
+
+  {# {% if tags %}
     <p>
-    {% for tag in tags %}
-      {%- if tag != "post" -%}
-        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-      {%- endif -%}
-    {% endfor %}
+      {% for tag in tags %}
+        {%- if tag != "post" -%}
+          {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+          <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+        {%- endif -%}
+      {% endfor %}
     </p>
-  {% endif %}
+  {% endif %} #}
 
 </article>
 
-<nav>
+{# <nav>
   <a href="{{ '/blog/' | url }}">← Blog index</a>
-</nav>
+</nav> #}
